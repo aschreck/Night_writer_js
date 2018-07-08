@@ -55,15 +55,11 @@ function readBraille(line1, line2, line3) {
 
     var letters = []
     for(var i = 0; i < brailleTop.length; i++) {
-        var arr = [];
-        arr.push(brailleTop[i]); 
-        arr.push(brailleMiddle[i]); 
-        arr.push(brailleBottom[i]); 
         for (var letter in library) {
-            if (library[letter][0] === arr[0]) {
+            if (library[letter][0] === brailleTop[i]) {
                 //check the second one.
-                if(library[letter][1] === arr[1]) {
-                    if(library[letter][2] === arr[2]) {
+                if(library[letter][1] === brailleMiddle[i]) {
+                    if(library[letter][2] === brailleBottom[i]) {
                         letters.push(letter)
                     }
                 }
